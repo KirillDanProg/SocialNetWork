@@ -1,0 +1,18 @@
+.header {
+  background-color: rgb(167, 168, 168);
+  grid-area: h;
+  padding: 0  20px;
+  border-radius: 0 0 0 15px;
+}
+.nav {
+}
+.list {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: stretch;
+}
+.list-item {
+}
+.logo {
+}
+

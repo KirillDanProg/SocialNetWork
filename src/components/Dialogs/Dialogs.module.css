@@ -1,0 +1,15 @@
+.dialogsContainer {
+    display: grid;
+    grid-template-columns: 4fr 10fr;
+}
+.dialogs {
+    display: grid;
+    gap: 15px;
+    margin: 15px;
+    /* border-right: 1px solid #000; */
+}
+
+.messages {
+    margin-top: 10px;
+border-left: 0.5px solid #000;
+}

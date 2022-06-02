@@ -1,0 +1,38 @@
+
+.sidebar {
+  grid-area: s;
+  display: grid;
+  width: 100%;
+  background-color: #232323;
+}
+.list {
+  display: inline-flex;
+  flex-direction: column;
+}
+.item a {
+  display: block;
+  margin: 10px 15px;
+  font-size: 20px;
+  color: whitesmoke;
+  user-select: none;
+}
+
+.item a.active {
+  color: #00ffcf;
+  transform: scale(1.05) translateX(0.5rem);
+  transition: 0.3s;
+  /* transform: scaleX(1.1); */
+  /* transform-origin: 0% 100%;
+  animation: main .1s; */
+}
+/* @keyframes main {
+  0% {
+    transform: scaleX(0);
+  }
+  100% {
+    transform: scaleX(1.1);
+  }
+} */
+/* .itemSet {
+  margin-top: 200px;
+} */

@@ -1,0 +1,13 @@
+.dialog {
+    text-align: center;
+    border-top: 0.5px solid #000;
+}
+.dialog:nth-child(1){
+    border-top: none;
+}
+.dialog img {
+display: block;
+width: 80px;
+margin: 0 auto;
+border-radius: 5px;
+}

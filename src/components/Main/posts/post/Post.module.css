@@ -1,0 +1,22 @@
+.post {
+  display: grid;
+  grid-template-areas:
+    "i p"
+    "l l";
+  align-items: center;
+  justify-content: start;
+  margin-bottom: 15px;
+}
+.post img {
+  width: 70px;
+  grid-area: i;
+}
+p {
+  grid-area: p;
+}
+i {
+  display: block;
+  grid-area: l;
+  padding-left: 15px;
+  /* font-size: 15px; */
+}
