@@ -1,0 +1,25 @@
+
+.loginBox {
+    display: grid;
+    place-content: center;
+    background-color: rgb(253, 247, 247);
+    min-width: 25%;
+    height: 24%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border: 2px solid rgba(173, 173, 173, 0.903);
+    border-radius: 20px;
+    box-shadow: 0 0 1px white, 0 0 2px white,0 0 3px white, 0 0 8px rgba(173, 173, 173, 0.903), 0 0 12px rgba(173, 173, 173, 0.903), 0 0 16px rgba(173, 173, 173, 0.903);
+}
+.input {
+    border: none;
+    padding: 10px;
+    width: 100%;
+    border-radius: 10px;
+}
+.input, button {
+    display: block;
+    margin-bottom: 10px;
+}

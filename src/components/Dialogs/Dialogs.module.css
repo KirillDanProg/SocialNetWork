@@ -1,15 +1,37 @@
 .dialogsContainer {
-    display: grid;
-    grid-template-columns: 4fr 10fr;
+  display: grid;
+  grid-template-columns: 3fr 10fr;
+}
+.colOne {
+  height: 100vh;
+  background-color: rgb(241, 241, 241);
+  border-right: 1px solid #000;
+}
+.colTwo {
+  padding: 15px;
+  position: relative;
 }
 .dialogs {
-    display: grid;
-    gap: 15px;
-    margin: 15px;
-    /* border-right: 1px solid #000; */
+  display: grid;
+  gap: 15px;
 }
 
-.messages {
-    margin-top: 10px;
-border-left: 0.5px solid #000;
+
+.messageContainer {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  bottom: 50px;
+  width: 100%;
+  text-align: center;
+}
+.messageContainer textarea {
+  margin: 0;
+  padding: 0;
+  bottom: 50px;
+  width: 70%;
+  height: 25px;
+  border: 1px solid rgb(100, 42, 42);
+  border-radius: 20px;
 }

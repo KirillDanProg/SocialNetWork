@@ -1,4 +1,5 @@
 * {
+  box-sizing: border-box;
   margin: 0;
   padding: 0;
   list-style: none;
@@ -11,8 +12,7 @@
 .wrapper-app {
   display: grid;
   gap: 8px;
-  /* grid-template-rows: 60px 10fr; */
-  grid-template-columns: 4fr 10fr;
+  grid-template-columns: 1fr 4fr;
   grid-template-areas:
     "s  m"
     "s  m"
@@ -20,9 +20,19 @@
 }
 
 .wrapper-app__content {
+  position: relative;
   width: 100%;
   grid-area: m;
   min-height: 100vh;
   border-radius: 15px 0 0 15px;
   background-color: #fff;
+}
+
+button {
+  margin: 10px;
+  border: 2px solid rgb(29, 117, 63);
+  border-radius: 10px;
+  padding: 5px 10px;
+  background-color: rgb(29, 117, 63);
+  color: whitesmoke;
 }

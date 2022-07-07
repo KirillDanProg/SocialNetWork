@@ -1,4 +1,3 @@
-
 .sidebar {
   grid-area: s;
   display: grid;
@@ -36,3 +35,11 @@
 /* .itemSet {
   margin-top: 200px;
 } */
+
+.teamContainer {
+  display: flex;
+  flex-wrap: wrap;
+  color: whitesmoke;
+  text-align: center;
+}
+

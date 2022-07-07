@@ -1,0 +1,13 @@
+.userContainer {
+    background-color: #dedede;
+    margin: 10px;
+    padding: 15px;
+    word-wrap: break-word;
+    border-radius: 10px;
+    text-align: center;
+}
+.userContainer img {
+    width: 80%;
+    margin:  auto;
+
+}

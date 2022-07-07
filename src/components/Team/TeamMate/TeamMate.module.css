@@ -1,0 +1,9 @@
+.teamContainerName {
+    margin-right: 10px;
+    text-align: center;
+  }
+  .teamContainerImg {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+  }

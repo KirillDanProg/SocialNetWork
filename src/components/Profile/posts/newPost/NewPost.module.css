@@ -1,0 +1,13 @@
+.newPost {
+  margin-left: 10px;
+}
+
+textarea {
+  width: 90%;
+  height: 60px;
+  margin: 0 auto;
+  margin-top: 20px;
+  padding: 5px;
+  border: 2px solid gray;
+  border-radius: 10px;
+}
