@@ -4,16 +4,28 @@ const ADD_POST = "ADD-POST";
 const SET_PROFILE = "SET_PROFILE";
 const SET_USER_STATUS = "SET_USER_STATUS";
 const UPDATE_STATUS = "UPDATE_STATUS";
-const SET_USER_PHOTO = "SET_USER_PHOTO"
-
+const SET_USER_PHOTO = "SET_USER_PHOTO";
+type InitialStateType = {
+  posts: Array<object>
+  profile: any
+  status: string
+  profileInfo: any
+}
 let initialState = {
   posts: [],
   profile: null,
   status: "",
   profileInfo: null
 };
+type ActionType = {
+  type: string
+  postText: string
+  profile: number
+  status: number
+  newStatus: string
+}
 
-const profileReducer = (state = initialState, action) => {
+const profileReducer = (state = initialState, action: ActionType) => {
   switch (action.type) {
     case ADD_POST:
       let newPost = {
@@ -52,29 +64,23 @@ const profileReducer = (state = initialState, action) => {
 };
 
 // actionCreator
-export const addPostActionCreator = (postText) => ({
+export const addPostActionCreator = (postText: string) => ({
   type: ADD_POST,
   postText
 });
-export const setProfile = (profile) => {
+export const setProfile = (profile: string) => {
   return {
     type: SET_PROFILE,
     profile,
   };
 };
-export const setUserStatus = (status) => {
+export const setUserStatus = (status: string) => {
   return {
     type: SET_USER_STATUS,
     status,
   };
 };
-export const updateUserStatus = (newStatus) => {
-  return {
-    type: UPDATE_STATUS,
-    newStatus,
-  };
-};
-export const setUserPhoto = (photo) => {
+export const setUserPhoto = (photo: string) => {
   return {
     type: SET_USER_PHOTO,
     photo
@@ -83,22 +89,22 @@ export const setUserPhoto = (photo) => {
 
 
 // thunkCreator
-export const profileLoad = (userId) => {
-  return (dispatch) => {
+export const profileLoad = (userId: number) => {
+  return (dispatch: any) => {
     if (userId === undefined) {
       userId = 24498;
     }
-    profileAPI.getProfile(userId).then((data) => {
+    profileAPI.getProfile(userId).then((data: any) => {
       dispatch(setProfile(data));
     });
   };
 };
-export const getUserStatus = (userId) => {
-  return (dispatch) => {
+export const getUserStatus = (userId: number) => {
+  return (dispatch: any) => {
     if(userId === undefined) {
       userId = 24498
     }
-    profileAPI.getStatus(userId).then((status) => {
+    profileAPI.getStatus(userId).then((status: string) => {
       if(status) {
         dispatch(setUserStatus(status));
       } else if(!status) {
@@ -108,9 +114,9 @@ export const getUserStatus = (userId) => {
   };
 };
 
-export const getUpdateStatus = (status) => {
-  return (dispatch) => {
-    profileAPI.updateStatus(status).then((response) => {
+export const getUpdateStatus = (status: string) => {
+  return (dispatch: any) => {
+    profileAPI.updateStatus(status).then((response: any) => {
       if(response.data.resultCode === 0) {
         dispatch(setUserStatus(status));
       }
@@ -118,9 +124,9 @@ export const getUpdateStatus = (status) => {
   };
 };
 
-export const getUserPhoto = (photo) => {
-  return (dispatch) => {
-    profileAPI.setUserPhoto(photo).then((response) => {
+export const getUserPhoto = (photo: string) => {
+  return (dispatch: any) => {
+    profileAPI.setUserPhoto(photo).then((response: any) => {
       if(response.data.resultCode === 0) {
         dispatch(setUserPhoto(photo))
       }

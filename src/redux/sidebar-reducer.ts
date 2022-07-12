@@ -1,4 +1,12 @@
-let initialState = {
+type User = {
+  id: number
+  name: string
+  img: string
+}
+type InitialStateType = {
+  mates: Array<User>
+}
+let initialState: InitialStateType = {
   mates: [
     {
       id: 1,
@@ -18,7 +26,7 @@ let initialState = {
   ],
 }
 
-const sidebarReducer = (state = initialState, action) => {
+const sidebarReducer = (state = initialState, action: any) => {
   return state
 }
 

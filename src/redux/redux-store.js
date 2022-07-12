@@ -18,5 +18,4 @@ let store = legacy_createStore(reducers, applyMiddleware(ThunkMiddleware));
 
 
 
-window.store = store
 export default store
