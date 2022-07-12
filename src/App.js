@@ -1,5 +1,5 @@
 import React from "react";
-import { BrowserRouter, Route, Routes } from "react-router-dom";
+import {BrowserRouter, Route, Routes} from "react-router-dom";
 import "./App.css";
 import Projects from "./components/Projects/Projects";
 import Settings from "./components/Settings/Settings";
@@ -12,28 +12,27 @@ import HeaderContainer from "./components/Header/HeaderContainer";
 import LoginContainer from "./components/Login/LoginContainer";
 
 function App() {
-  return (
-    <BrowserRouter>
-      <div className="wrapper-app">
-        <NavbarContainer />
-        <div className="wrapper-app__content">
-          <HeaderContainer />
-          <Routes>
-            <Route path="/profile" element={<ProfileContainer />}>
-              <Route path=":userId" element={<ProfileContainer />} />
-            </Route>
-            <Route path="/messages" element={<DialogsContainer />} />
-            <Route path="/projects" element={<Projects />} />
-            <Route path="/users" element={<UsersContainer />} />
-            <Route path="/settings" element={<Settings />} />
-            <Route path="/team" element={<TeamContainer />} />
-            <Route path="/login" element={<LoginContainer />} />
-
-          </Routes>
-        </div>
-      </div>
-    </BrowserRouter>
-  );
+    return (
+        <BrowserRouter>
+            <div className="wrapper-app">
+                <NavbarContainer/>
+                <div className="wrapper-app__content">
+                    <HeaderContainer/>
+                    <Routes>
+                        <Route path="/profile" element={<ProfileContainer/>}>
+                            <Route path=":userId" element={<ProfileContainer/>}/>
+                        </Route>
+                        <Route path="/messages" element={<DialogsContainer/>}/>
+                        <Route path="/projects" element={<Projects/>}/>
+                        <Route path="/users" element={<UsersContainer/>}/>
+                        <Route path="/settings" element={<Settings/>}/>
+                        <Route path="/team" element={<TeamContainer/>}/>
+                        <Route path="/login" element={<LoginContainer/>}/>
+                    </Routes>
+                </div>
+            </div>
+        </BrowserRouter>
+    );
 }
 
 export default App;
