@@ -3,19 +3,27 @@ import { authAPI } from "../api/api";
 const SET_USER_AUTH = "SET_USER_AUTH";
 const SET_LOGIN_AUTH = "SET_LOGIN_AUTH";
 
+type InitialStateType = {
+  id: number | null
+  login: string | null,
+  email: string | null,
+  isAuth: boolean
+}
 let initialState = {
   id: null,
   login: null,
   email: null,
   isAuth: false,
 };
+
 type ActionType = {
   type: string
   email: string
   password: string
   data: object
 }
-const authReducer = (state = initialState, action: ActionType) => {
+
+const authReducer = (state: InitialStateType = initialState, action: ActionType) => {
   switch (action.type) {
     case SET_USER_AUTH:
       return {

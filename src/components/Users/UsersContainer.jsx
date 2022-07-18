@@ -3,32 +3,35 @@ import Users from "./Users";
 import React from "react";
 import { withAuthRedirect } from "../../hoc/withAuthRedirect";
 import {
-  follow,
-  setUsers,
-  unfollow,
-  pageChange,
-  setTotalPages,
-  isFetchingToggle,
-  toggleFollowingInProgress,
-  getUsers,
-  updateUsers,
-  acceptFollow,
-  acceptUnfollow,
+    follow,
+    setUsers,
+    unfollow,
+    pageChange,
+    setTotalPages,
+    isFetchingToggle,
+    toggleFollowingInProgress,
+    getUsers,
+    updateUsers,
+    acceptFollow,
+    acceptUnfollow,
 } from "../../redux/users-reducer";
 import { compose } from "redux";
 
-class UsersContainer extends React.Component {
-  componentDidMount() {
-    this.props.getUsers(this.props.currentPage, this.props.pageSize);
-  }
+function UsersContainer(props) {
+    let [count, setCount] = React.useState(1)
 
-  currentPageChange = (page) => {
-    this.props.updateUsers(page, this.props.pageSize);
-  };
+    React.useEffect(() => {
+      props.getUsers(props.currentPage, props.pageSize)
+    }, [])
 
-  render() {
-    return <Users currentPageChange={this.currentPageChange} {...this.props} />;
-  }
+    const fetchMoreData = () => {
+        setCount(count + 1)
+        props.updateUsers(count, 10)
+    }
+
+    return (
+        <Users fetchMoreData={fetchMoreData}  {...props}/>
+    )
 }
 
 const mapStateToProps = (state) => {
@@ -59,25 +62,3 @@ export default compose(
   withAuthRedirect
 )(UsersContainer);
 
-// const mapDispatchToProps = (dispatch) => {
-//   return {
-//     follow: (userId) => {
-//       dispatch(followAC(userId));
-//     },
-//     unfollow: (userId) => {
-//       dispatch(unfollowAC(userId));
-//     },
-//     setUsers: (users) => {
-//       dispatch(setUsersAC(users));
-//     },
-//     currentPageChange: (page) => {
-//       dispatch(currentPageChangeAC(page));
-//     },
-//     setTotalPages: (totalPages) => {
-//       dispatch(setTotalPagesAC(totalPages));
-//     },
-//     isFetchingToggle: (isFetching) => {
-//       dispatch(isFetchingToggleAC(isFetching));
-//     },
-//   };
-// };

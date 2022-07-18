@@ -28,7 +28,6 @@ class ProfileContainer extends React.Component {
         this.props.profileLoad(this.props.router.params.userId);
         this.props.getUserStatus(this.props.router.params.userId);
     }
-
     render() {
         return <Profile {...this.props} />;
     }
